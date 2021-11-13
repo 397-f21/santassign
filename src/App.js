@@ -40,7 +40,7 @@ function App() {
 
   console.log(users)
   return (
-    <div className="container col-6  d-flex flex-column justify-content-center"> 
+    <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
       <div>This is SANTAssign</div>
 
         <div>
@@ -51,11 +51,13 @@ function App() {
               </div>)}
         </div>
 
-        <input id="input_name" type="text" />
-        <input id="input_email" type="email" />
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_name" type="text" 
+      style = {{maxWidth:"500px",}} placeholder="Name"/>
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
+      style = {{maxWidth:"500px"}} placeholder="Email"/>
         <br/>
-        <button className='btn btn-primary' onClick={addUser}> Add </button>
-        <button className='btn btn-primary' onClick={ () => assign(users, updateAssigned) }> Assign Santas! </button>
+        <button className='rounded-pill btn btn-primary w-100 m-1' style = {{maxWidth:"500px",}} onClick={addUser}> Add </button>
+        <button className='rounded-pill btn btn-primary w-100 m-1' style = {{maxWidth:"500px",}} onClick={ () => assign(users, updateAssigned) }> Assign Santas! </button>
 
     </div>
 
