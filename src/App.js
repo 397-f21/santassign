@@ -12,12 +12,24 @@ const shuffleArray = array => {
 }
 
 const assign = (userList, onFinish) => {
+  if (userList.length < 3) {
+    alert('You must have at least 3 Secret Santas!')
+    return ;
+  }
+
   const idxs = [...Array(userList.length).keys()]
   shuffleArray(idxs);
   const pairs = idxs.map( (_, idx) => [idxs[idx], idxs[(idx+1) % idxs.length]]);
+  // listof [[name, email], [name, email]]
   const assignments = pairs.map( (val) => [userList[val[0]], userList[val[1]]]);
   console.log("Assignments:");
   console.log(assignments);
+
+  fetch('https://qf6pwfw20b.execute-api.us-east-1.amazonaws.com/default/SantAssignEmailer',
+   {method : 'POST',
+   mode: 'no-cors',
+   body: JSON.stringify({"pairs" : assignments})});
+
   onFinish();
 };
 
