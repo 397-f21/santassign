@@ -79,10 +79,10 @@ function App() {
         <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
       style = {{maxWidth:"500px"}} placeholder="Email"/>
         <br/>
-        <button className='rounded-pill btn w-100 m-1' onClick={addUser}
+        <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
         style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
-        <button className='rounded-pill btn w-100 m-1' onClick={ () => assign(users, updateAssigned) }
-        style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}> Assign Santas! </button>
+        <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
+        style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
 
     </div>
     {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
