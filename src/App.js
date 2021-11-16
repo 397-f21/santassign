@@ -34,8 +34,11 @@ const assign = (userList, onFinish) => {
 };
 
 const Name = ({user}) => (
-  <div>
-    {user[0]} {user[1]}
+  <div className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
+    <div className = 'p-1'>
+    <h4 className = 'card-title m-0'>{user[0]}</h4>
+    <div className = 'card-text'>{user[1]}</div>
+    </div>
   </div>
 );
 
@@ -58,13 +61,12 @@ function App() {
 
   console.log(users)
   return (
-    <div style={{width:"100%", minHeight:"100vh", background:"linear-gradient(45deg, #2B6A4D, #A5C1AE)"}}>
+    <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
     <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
-    <h1 className="display-1 fw-bold"> SANTA<span style={{color:'black'}}>ssign</span></h1>
-      <div>This is SANTAssign</div>
-
-        <div>
-          <h4>People: </h4>
+    <h1 className="display-1 fw-bold" style={{color:'#A5C1AE'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
+    
+        <div className = 'd-flex flex-wrap justify-content-center'>
+          
           {users.map(( user, idx) =>
             <Name user={user} key={idx}/>)}
         </div>
