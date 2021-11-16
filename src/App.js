@@ -60,6 +60,7 @@ function App() {
   return (
     <div style={{width:"100%", minHeight:"100vh", background:"linear-gradient(45deg, #2B6A4D, #A5C1AE)"}}>
     <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
+    <h1 className="display-1 fw-bold"> SANTA<span style={{color:'black'}}>ssign</span></h1>
       <div>This is SANTAssign</div>
 
         <div>
