@@ -59,14 +59,13 @@ function App() {
 
   const updateAssigned = () => setAssigned(true);
 
-  console.log(users)
   return (
     <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
     {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
 
     <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
     
-    <h1 className="display-1 fw-bold" style={{color:'#2a9d8f'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
+    <h1 className="display-1 fw-bold" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
     
         <div className = 'd-flex flex-wrap justify-content-center'>
           
@@ -85,7 +84,6 @@ function App() {
         style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
 
     </div>
-    {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
     </div>
 
   );
