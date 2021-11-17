@@ -55,8 +55,20 @@ function App() {
         document.querySelector("#input_name").value = "";
         document.querySelector("#input_email").value = "";
       }
+      
   }
-
+      if (assigned) return(
+        <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
+          {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
+        <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
+          <h1 className="display-1 fw-bold" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
+          <h4 style={{color:'white'}}>
+              The Assignments have been sent to everyone's Email!!!
+          </h4>
+        </div>
+        </div>
+      )
+      
   const updateAssigned = () => setAssigned(true);
 
   return (

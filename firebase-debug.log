@@ -1,0 +1,87 @@
+[debug] [2021-11-17T03:04:49.962Z] ----------------------------------------------------------------------
+[debug] [2021-11-17T03:04:49.964Z] Command:       D:\Program Files\nodejs\node.exe C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-17T03:04:49.965Z] CLI Version:   9.20.0
+[debug] [2021-11-17T03:04:49.965Z] Platform:      win32
+[debug] [2021-11-17T03:04:49.965Z] Node Version:  v16.11.0
+[debug] [2021-11-17T03:04:49.966Z] Time:          Tue Nov 16 2021 21:04:49 GMT-0600 (北美中部标准时间)
+[debug] [2021-11-17T03:04:49.966Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-17T03:04:49.978Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-11-17T03:04:50.099Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-17T03:04:50.099Z] > authorizing via signed-in user (yifeizhao990105@gmail.com)
+[debug] [2021-11-17T03:04:50.099Z] [iam] checking project santassign for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-17T03:04:50.102Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-17T03:04:50.103Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:04:50.205Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-11-17T03:04:50.205Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-11-17T03:04:50.228Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 17 Nov 2021 03:04:50 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:04:50.245Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/santassign:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-17T03:04:50.487Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:04:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=144","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:04:50.488Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project santassign:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-11-17T03:04:50.489Z] > refreshing access token with scopes: []
+[debug] [2021-11-17T03:04:50.489Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:04:50.580Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Wed, 17 Nov 2021 03:04:51 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:04:50.597Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/santassign [none]
+[debug] [2021-11-17T03:04:50.811Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/santassign 403
+[debug] [2021-11-17T03:04:50.811Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/santassign {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-11-17T03:04:50.812Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-11-17T03:04:50.915Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:238:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.request (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
+    at async Object.getFirebaseProject (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project santassign. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-11-17T03:07:37.981Z] ----------------------------------------------------------------------
+[debug] [2021-11-17T03:07:37.983Z] Command:       D:\Program Files\nodejs\node.exe C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-17T03:07:37.984Z] CLI Version:   9.22.0
+[debug] [2021-11-17T03:07:37.984Z] Platform:      win32
+[debug] [2021-11-17T03:07:37.984Z] Node Version:  v16.11.0
+[debug] [2021-11-17T03:07:37.985Z] Time:          Tue Nov 16 2021 21:07:37 GMT-0600 (北美中部标准时间)
+[debug] [2021-11-17T03:07:37.985Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-17T03:07:38.081Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-17T03:07:38.082Z] > authorizing via signed-in user (yifeizhao990105@gmail.com)
+[debug] [2021-11-17T03:07:38.082Z] [iam] checking project santassign for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-17T03:07:38.084Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-17T03:07:38.085Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:07:38.195Z] <<< HTTP RESPONSE 200 {"date":"Wed, 17 Nov 2021 03:07:38 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:07:38.219Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/santassign:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-17T03:07:38.391Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:07:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=101","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:07:38.392Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project santassign:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2021-11-17T03:07:38.393Z] > refreshing access token with scopes: []
+[debug] [2021-11-17T03:07:38.394Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:07:38.486Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 17 Nov 2021 03:07:39 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:07:38.513Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/santassign [none]
+[debug] [2021-11-17T03:07:38.804Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/santassign 403
+[debug] [2021-11-17T03:07:38.804Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/santassign {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2021-11-17T03:07:38.805Z] HTTP Error: 403, The caller does not have permission
+[debug] [2021-11-17T03:07:38.889Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Client.doRequest (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:241:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.request (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:96:20)
+    at async Object.getFirebaseProject (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:73:9)
+    at async C:\Users\zyife\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project santassign. Please make sure the project exists and your account has permission to access it.
