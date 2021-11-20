@@ -75,7 +75,7 @@ function App() {
     <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
     {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
 
-    <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
+    <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
     
     <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
     
