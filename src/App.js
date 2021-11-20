@@ -33,18 +33,23 @@ const assign = (userList, onFinish) => {
   onFinish();
 };
 
-const Name = ({user}) => (
+const Name = ({user, handleDelete}) => (
   <div className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
     <div className = 'p-1'>
     <h4 className = 'card-title m-0'>{user[0]}</h4>
     <div className = 'card-text'>{user[1]}</div>
     </div>
+    <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
   </div>
 );
 
 function App() {
   const [users, setUsers] = useState([]);
   const [assigned, setAssigned] = useState(false);
+
+  const handleDelete = (deleteIdx) => (
+    setUsers(users.filter((val, idx) => idx !== deleteIdx))
+  )
 
   const addUser =  (  ) => {
       const name = document.querySelector("#input_name").value 
@@ -82,7 +87,7 @@ function App() {
         <div className = 'd-flex flex-wrap justify-content-center'>
           
           {users.map(( user, idx) =>
-            <Name user={user} key={idx}/>)}
+            <Name user={user} handleDelete={() => handleDelete(idx)} key={idx}/>)}
         </div>
 
         <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_name" type="text" 
