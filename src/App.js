@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.scss';
 import { useState } from 'react';
 
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 const shuffleArray = array => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -43,6 +48,7 @@ const Name = ({user, handleDelete}) => (
   </div>
 );
 
+
 function App() {
   const [users, setUsers] = useState([]);
   const [assigned, setAssigned] = useState(false);
@@ -55,13 +61,21 @@ function App() {
       const name = document.querySelector("#input_name").value 
       const email = document.querySelector("#input_email").value
 
-      if (name && email) {
-        setUsers([...users, [name, email]])
-        document.querySelector("#input_name").value = "";
-        document.querySelector("#input_email").value = "";
+      if (!name || !email) {
+        alert("Please enter a Name and Email");
+        return;
       }
       
+      if(!validateEmail(email)){
+        alert(`${email} is not a valid Email`);
+        return;
+      }
+
+      setUsers([...users, [name, email]])
+      document.querySelector("#input_name").value = "";
+      document.querySelector("#input_email").value = "";  
   }
+
       if (assigned) return(
         <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
           {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
