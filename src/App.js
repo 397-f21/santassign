@@ -38,12 +38,12 @@ const assign = (userList, onFinish) => {
 };
 
 const Name = ({user, handleDelete}) => (
-  <div className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
+  <div  data-cy='name' className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
     <div className = 'p-1'>
-    <h4 className = 'card-title m-0'>{user[0]}</h4>
+    <h4 className = 'card-title m-0' >{user[0]}</h4>
     <div className = 'card-text'>{user[1]}</div>
     </div>
-    <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
+    <button className='btn btn-danger' data-cy='delete' onClick={handleDelete}>Delete</button>
   </div>
 );
 
@@ -80,7 +80,7 @@ function App() {
           {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
         <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
           <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
-          <h4 style={{color:'white'}}>
+          <h4 data-cy='assigned-msg' style={{color:'white'}}>
               The assignments have been sent to everyone's email!!!
           </h4>
         </div>
@@ -103,14 +103,14 @@ function App() {
             <Name user={user} handleDelete={() => handleDelete(idx)} key={idx}/>)}
         </div>
 
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_name" type="text" 
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_name" data-cy="name-btn" type="text" 
       style = {{maxWidth:"500px",}} placeholder="Name"/>
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" data-cy="email-btn" type="email" 
       style = {{maxWidth:"500px"}} placeholder="Email"/>
         <br/>
-        <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
+        <button className='rounded-pill w-100 m-1 pulse' data-cy='add-btn' onClick={addUser}
         style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
-        <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
+        <button href='#' className='rounded-pill w-100 m-1 pulse' data-cy='assign-btn' onClick={ () => assign(users, updateAssigned) }
         style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
 
     </div>
