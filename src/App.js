@@ -1,5 +1,6 @@
 import './App.scss';
 import { useState } from 'react';
+import {IoCloseSharp} from 'react-icons/io5';
 
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -39,12 +40,13 @@ const assign = (userList, onFinish) => {
 
 const Name = ({user, handleDelete}) => (
   <div className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
+    <IoCloseSharp style={{position:'absolute', right:0, top:0}} onClick={handleDelete}/>
     <div className = 'p-1'>
     <h4 className = 'card-title m-0'>{user[0]}</h4>
     <div className = 'card-text'>{user[1]}</div>
     </div>
-    <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
-  </div>
+    
+      </div>
 );
 
 
@@ -52,9 +54,11 @@ function App() {
   const [users, setUsers] = useState([]);
   const [assigned, setAssigned] = useState(false);
 
-  const handleDelete = (deleteIdx) => (
-    setUsers(users.filter((val, idx) => idx !== deleteIdx))
-  )
+  const handleDelete = (deleteIdx) => {
+    if (window.confirm('are you sure you want to remove this person?')){
+      setUsers(users.filter((val, idx) => idx !== deleteIdx))  
+    }
+  }
 
   const addUser =  (  ) => {
       const name = document.querySelector("#input_name").value 
