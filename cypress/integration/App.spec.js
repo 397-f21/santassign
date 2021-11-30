@@ -5,6 +5,8 @@ describe ('Test App', () => {
 
     it ('has logo', () => {
         cy.visit ('/');
-        cy.get('[data-cy=logo]').should('contain', 'SANTAssign');
+        cy.get('[data-cy=logo]')
+          .contains(/santassign/i)
+          .should('exist');
     });
 });
