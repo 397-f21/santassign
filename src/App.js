@@ -80,7 +80,7 @@ function App() {
   }
 
       if (assigned) return(
-        <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
+        <div>
           {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
         <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
           <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
@@ -94,12 +94,12 @@ function App() {
   const updateAssigned = () => setAssigned(true);
 
   return (
-    <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
+    <div>
     {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
 
     <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
     
-    <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
+    <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367', filter:'none'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
     
         <div className = 'd-flex flex-wrap justify-content-center'>
           
@@ -111,9 +111,11 @@ function App() {
       style = {{maxWidth:"500px",}} placeholder="Name"/>
         <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
       style = {{maxWidth:"500px"}} placeholder="Email"/>
-        <br/>
         <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
         style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
+        <br/>
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_limit" type="text" 
+        style = {{maxWidth:"500px",}} placeholder="Price Limit (optional)" />
         <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
         style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
 
