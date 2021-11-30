@@ -55,6 +55,7 @@ exports.handler = async (event) => {
             <h2>
               ${pair[0][0]}
             </h2>
+            ${body.pricelimit && `<h3>Your spending limit is : $${body.pricelimit} </h3>`}
           </div>
       </body>`,
       };
