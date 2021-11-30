@@ -42,20 +42,23 @@ exports.handler = async (event) => {
         subject: 'SANTAssign Match',
         text: `SANTAssign\nChristmas is coming up!\nIt's your job to find a gift for:\n${pair[0][0]}`,
         html: `<body>
-          <div style="width: 100%; height: 100%; min-height: fit-content; background-color: #AF0B26; font-family: sans-serif; text-align: center; color: white; padding: 0.5em;">
-            <h1 style="color:#56a367; font-weight: bold; font-size: 3.5em;">
-              SANTA<span style="color: white;">ssign</span>
-            </h1>
-            
-            <h4 style="margin-bottom: 0.1em;">
-              Christmas is coming up! <br> 
-              It's your job to find a gift for:
-            </h4>
-    
-            <h2>
-              ${pair[0][0]}
-            </h2>
-            ${body.pricelimit && `<h3>Your spending limit is : $${body.pricelimit} </h3>`}
+          <div style="width: 100%; height: 100%; min-height: fit-content; background-color: #AF0B26; font-family: sans-serif; text-align: center; color: white;">
+            <div style="padding: 0.5em;">
+              <h1 style="color:#56a367; font-weight: bold; font-size: 3.5em;">
+                SANTA<span style="color: white;">ssign</span>
+              </h1>
+              
+              <h4 style="margin-bottom: 0.1em;">
+                Christmas is coming up! <br> 
+                It's your job to find a gift for:
+              </h4>
+      
+              <h2>
+                ${pair[0][0]}
+              </h2>
+              ${body.pricelimit ? `<h3>Your spending limit is : $${body.pricelimit} </h3>` : ``}
+            </div>
+            <img src="https://www.pngkit.com/png/full/857-8570261_bg-footer-snow.png" style="width:100%">
           </div>
       </body>`,
       };
