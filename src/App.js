@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.scss';
 import { useState } from 'react';
+import {IoCloseSharp} from 'react-icons/io5';
 
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -40,12 +40,13 @@ const assign = (userList, onFinish) => {
 
 const Name = ({user, handleDelete}) => (
   <div className = "rounded card m-2" style={{minWidth:"200px", backgroundColor:"white"}}>
+    <IoCloseSharp style={{position:'absolute', right:0, top:0}} onClick={handleDelete}/>
     <div className = 'p-1'>
     <h4 className = 'card-title m-0'>{user[0]}</h4>
     <div className = 'card-text'>{user[1]}</div>
     </div>
-    <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
-  </div>
+    
+      </div>
 );
 
 
@@ -53,9 +54,11 @@ function App() {
   const [users, setUsers] = useState([]);
   const [assigned, setAssigned] = useState(false);
 
-  const handleDelete = (deleteIdx) => (
-    setUsers(users.filter((val, idx) => idx !== deleteIdx))
-  )
+  const handleDelete = (deleteIdx) => {
+    if (window.confirm('are you sure you want to remove this person?')){
+      setUsers(users.filter((val, idx) => idx !== deleteIdx))  
+    }
+  }
 
   const addUser =  (  ) => {
       const name = document.querySelector("#input_name").value 
@@ -77,7 +80,7 @@ function App() {
   }
 
       if (assigned) return(
-        <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
+        <div>
           {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
         <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
           <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
@@ -91,12 +94,12 @@ function App() {
   const updateAssigned = () => setAssigned(true);
 
   return (
-    <div style={{width:"100%", minHeight:"100vh", background:"#AF0B26"}}>
+    <div>
     {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
 
-    <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
+    <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
     
-    <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
+    <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367', filter:'none'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
     
         <div className = 'd-flex flex-wrap justify-content-center'>
           
@@ -108,9 +111,11 @@ function App() {
       style = {{maxWidth:"500px",}} placeholder="Name"/>
         <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
       style = {{maxWidth:"500px"}} placeholder="Email"/>
-        <br/>
         <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
         style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
+        <br/>
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_limit" type="text" 
+        style = {{maxWidth:"500px",}} placeholder="Price Limit (optional)" />
         <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
         style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
 
