@@ -33,6 +33,10 @@ const assign = (userList, onFinish) => {
   const priceLimit = document.querySelector('#input_limit').value
 
   const body = {"pairs" : assignments}
+  if(priceLimit < 0){
+    alert("Price limit must be greater than or equal to 0");
+    return;
+  }
   if (priceLimit) body["pricelimit"] = priceLimit;
 
   fetch('https://qf6pwfw20b.execute-api.us-east-1.amazonaws.com/default/SantAssignEmailer',
