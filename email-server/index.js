@@ -40,8 +40,23 @@ exports.handler = async (event) => {
         from: sender,
         to: pair[1][1],
         subject: 'SANTAssign Match',
-        text: `Your match: ${pair[0][0]}`,
-        html: `<h1>Your match: ${pair[0][0]}</h1>`,
+        text: `SANTAssign\nChristmas is coming up!\nIt's your job to find a gift for:\n${pair[0][0]}`,
+        html: `<body>
+          <div style="width: 100%; height: 100%; min-height: fit-content; background-color: #AF0B26; font-family: sans-serif; text-align: center; color: white; padding: 0.5em;">
+            <h1 style="color:#56a367; font-weight: bold; font-size: 3.5em;">
+              SANTA<span style="color: white;">ssign</span>
+            </h1>
+            
+            <h4 style="margin-bottom: 0.1em;">
+              Christmas is coming up! <br> 
+              It's your job to find a gift for:
+            </h4>
+    
+            <h2>
+              ${pair[0][0]}
+            </h2>
+          </div>
+      </body>`,
       };
       
       await transporter.sendMail(mailOptions)
