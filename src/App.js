@@ -90,7 +90,7 @@ function App() {
 
       if (assigned) return(
         <div>
-          {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
+          {[...Array(45).keys()].map(idx=> <div key={idx} className="snow"></div>)}
         <div className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
           <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
           <h4 style={{color:'white'}}>
@@ -104,34 +104,63 @@ function App() {
 
   return (
     <div>
-    {[...Array(45).keys()].map(idx=> <div key={idx} class="snow"></div>)}
+      {[...Array(45).keys()].map(idx=> <div key={idx} className="snow"></div>)}
+      
+      {/*<div style={{zIndex: 1, background: 'rgba(0, 0, 0, 0)', position: 'absolute', left: 0, top: 0, width: '100%', height: '100vh'}}>*/}
+        
+      <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center" style={{paddingBottom: 'calc(100vw / 3.77)'}}> 
+      
+        <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367', filter:'none'}}>
+          <img src="/santaicon.png" style={{height: '1em', marginBottom: '.3em', marginRight: '.1em'}} alt='icon'/>
+          Santa<span style={{color:'white'}}>ssign</span>
+          <img src="/santaicon.png" style={{height: '1em', marginBottom: '.3em', marginLeft: '.1em'}} alt='icon'/>
+        </h1>
+      
+          <div className = 'd-flex flex-wrap justify-content-center'>
+            
+            {users.map(( user, idx) =>
+              <Name user={user} handleDelete={() => handleDelete(idx)} key={idx}/>)}
+          </div>
 
-    <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"> 
-    
-    <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367', filter:'none'}}>SANTA<span style={{color:'white'}}>ssign</span></h1>
-    
-        <div className = 'd-flex flex-wrap justify-content-center'>
-          
-          {users.map(( user, idx) =>
-            <Name user={user} handleDelete={() => handleDelete(idx)} key={idx}/>)}
-        </div>
+          <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow" 
+              id="input_name" 
+              type="text" 
+              style = {{maxWidth:"500px",}} 
+              placeholder="Name" />
+          <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow" 
+              id="input_email"
+              type="email" 
+              style = {{maxWidth:"500px"}}
+              placeholder="Email" />
+          <button className='rounded-pill w-100 m-1 pulse' 
+              onClick={addUser}
+              style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}} > 
+            Add 
+          </button>
 
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_name" type="text" 
-      style = {{maxWidth:"500px",}} placeholder="Name"/>
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 " id="input_email" type="email" 
-      style = {{maxWidth:"500px"}} placeholder="Email"/>
-        <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
-        style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
-        <br/>
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_limit" type="number" 
-        style = {{maxWidth:"500px",}} placeholder="Price Limit (optional)" />
-        <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
-        style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
+          <br/>
 
-    </div>
+          <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow"
+              id="input_limit"
+              type="number" 
+              style = {{ maxWidth:"500px" }}
+              min = {0}
+              placeholder="Price Limit (optional)" />
+          <button
+              className='rounded-pill w-100 m-1 pulse' 
+              onClick={ () => assign(users, updateAssigned) }
+              style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>
+            Assign Santas! 
+          </button>
+
+      </div>
+      
+      <img src="https://www.pngkit.com/png/full/857-8570261_bg-footer-snow.png" alt="Footer" className='glow' style={{position: 'fixed', bottom: 0, left: 0, width:"100vw"}}/>
     </div>
 
   );
 }
 
 export default App;
+
+//
