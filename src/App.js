@@ -30,10 +30,15 @@ const assign = (userList, onFinish) => {
   console.log("Assignments:");
   console.log(assignments);
 
+  const priceLimit = document.querySelector('#input_limit').value
+
+  const body = {"pairs" : assignments}
+  if (priceLimit) body["pricelimit"] = priceLimit;
+
   fetch('https://qf6pwfw20b.execute-api.us-east-1.amazonaws.com/default/SantAssignEmailer',
    {method : 'POST',
    mode: 'no-cors',
-   body: JSON.stringify({"pairs" : assignments})});
+   body: JSON.stringify(body)});
 
   onFinish();
 };
@@ -114,7 +119,7 @@ function App() {
         <button className='rounded-pill w-100 m-1 pulse' onClick={addUser}
         style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}}> Add </button>
         <br/>
-        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_limit" type="text" 
+        <input className = "rounded-pill p-2 px-3 m-2 text-center w-100" id="input_limit" type="number" 
         style = {{maxWidth:"500px",}} placeholder="Price Limit (optional)" />
         <button href='#' className='rounded-pill w-100 m-1 pulse' onClick={ () => assign(users, updateAssigned) }
         style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>Assign Santas! </button>
