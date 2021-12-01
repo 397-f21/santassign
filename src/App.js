@@ -125,16 +125,16 @@ function App() {
           <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow" 
               id="input_name" 
               type="text" 
-              style = {{maxWidth:"500px",}} 
+              style = {{maxWidth:"500px",zIndex:1}} 
               placeholder="Name" />
           <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow" 
               id="input_email"
               type="email" 
-              style = {{maxWidth:"500px"}}
+              style = {{maxWidth:"500px",zIndex:1}}
               placeholder="Email" />
           <button className='rounded-pill w-100 m-1 pulse' 
               onClick={addUser}
-              style = {{maxWidth:"500px",backgroundColor:"#A5C1AE"}} > 
+              style = {{maxWidth:"500px",backgroundColor:"#A5C1AE",zIndex:1}} > 
             Add 
           </button>
 
@@ -143,13 +143,13 @@ function App() {
           <input className = "rounded-pill p-2 px-3 m-2 text-center w-100 glow"
               id="input_limit"
               type="number" 
-              style = {{ maxWidth:"500px" }}
+              style = {{ maxWidth:"500px",zIndex:1}}
               min = {0}
               placeholder="Price Limit (optional)" />
           <button
               className='rounded-pill w-100 m-1 pulse' 
               onClick={ () => assign(users, updateAssigned) }
-              style = {{maxWidth:"500px",backgroundColor:"#DF8080"}}>
+              style = {{maxWidth:"500px",backgroundColor:"#DF8080",zIndex:1}}>
             Assign Santas! 
           </button>
 

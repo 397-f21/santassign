@@ -10,9 +10,19 @@ h1 {
 body {
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #e67d7d 0%, #C30F16 100%);
+  // background-image:url('https://www.pngkit.com/png/full/857-8570261_bg-footer-snow.png') no-repeat;
   overflow: hidden;
   overflow-y: auto;
 }
+
+// body::before{
+//   background-color: radial-gradient(ellipse at bottom, #e67d7d 0%, #C30F16 100%);
+//   content: '';
+//   display: block;
+//   height: 100%;
+//   position: absolute;
+//   width: 100%;
+// }
 
 .glow {
   filter: drop-shadow(0 0 9px white);
