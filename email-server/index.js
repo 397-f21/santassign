@@ -50,6 +50,7 @@ exports.handler = async (event) => {
         <body>
           <div style="width: 100%; height: 100%; min-height: fit-content; background-color: #AF0B26; font-family: sans-serif; text-align: center; color: white;">
             <div style="padding: 0.5em;">
+              <img src="https://santassign.web.app/santaicon.png" style={{height: '1em', marginBottom: '.3em', marginRight: '.1em'}} alt='icon'/>
               <h1 style="font-family: 'Rochester', cursive; color:#56a367; font-weight: bold; font-size: 3.5em;">
                 SANTA<span style="color: white;">ssign</span>
               </h1>
