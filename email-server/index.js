@@ -41,10 +41,16 @@ exports.handler = async (event) => {
         to: pair[1][1],
         subject: 'SANTAssign Match',
         text: `SANTAssign\nChristmas is coming up!\nIt's your job to find a gift for:\n${pair[0][0]}`,
-        html: `<body>
+        html: `
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+        </head>
+        <body>
           <div style="width: 100%; height: 100%; min-height: fit-content; background-color: #AF0B26; font-family: sans-serif; text-align: center; color: white;">
             <div style="padding: 0.5em;">
-              <h1 style="color:#56a367; font-weight: bold; font-size: 3.5em;">
+              <h1 style="font-family: 'Rochester', cursive; color:#56a367; font-weight: bold; font-size: 3.5em;">
                 SANTA<span style="color: white;">ssign</span>
               </h1>
               
@@ -58,7 +64,7 @@ exports.handler = async (event) => {
               </h2>
               ${body.pricelimit ? `<h3>Your spending limit is : $${body.pricelimit} </h3>` : ``}
             </div>
-            <img src="https://www.pngkit.com/png/full/857-8570261_bg-footer-snow.png" style="width:100%">
+            <img src="https://www.pngkit.com/png/full/857-8570261_bg-footer-snow.png" style="width:100%, filter: drop-shadow(0 0 9px white)">
           </div>
       </body>`,
       };
