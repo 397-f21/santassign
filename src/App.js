@@ -56,9 +56,8 @@ const Name = ({user, handleDelete}) => (
     <div className = 'p-1'>
     <h4 className = 'card-title m-0'>{user[0]}</h4>
     <div className = 'card-text'>{user[1]}</div>
-    </div>
-    
-      </div>
+    </div>  
+  </div>
 );
 
 
@@ -79,6 +78,7 @@ const SoundControl = () => {
         playStatus={(playing) ? Sound.status.PLAYING : Sound.status.STOPPED}
         playFromPosition={0}
         volume={7}
+        loop={true}
       />
     </>
   )
