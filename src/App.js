@@ -1,9 +1,6 @@
 import './App.scss';
 import { useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
-import Sound from 'react-sound';
-import JingleBells from './jingle_bells_instrumental.mp3';
-import { GoMute, GoUnmute } from 'react-icons/go';
 
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -61,29 +58,6 @@ const Name = ({user, handleDelete}) => (
 );
 
 
-const SoundControl = () => {
-  const [playing, setPlaying] = useState(false);
-
-  const togglePlaying = () => setPlaying(!playing);
-
-  return (
-    <>
-      <button onClick={() => togglePlaying()}
-        style={{position: 'absolute', top: 0, right: 0, border: 'none', padding: '0'}}  
-      >
-        {playing ? <GoUnmute/> : <GoMute /> }
-      </button>
-      <Sound 
-        url={JingleBells}
-        playStatus={(playing) ? Sound.status.PLAYING : Sound.status.STOPPED}
-        playFromPosition={0}
-        volume={7}
-        loop={true}
-      />
-    </>
-  )
-}
-
 function App() {
   const [users, setUsers] = useState([]);
   const [assigned, setAssigned] = useState(false);
@@ -122,7 +96,6 @@ function App() {
       {/*<div style={{zIndex: 1, background: 'rgba(0, 0, 0, 0)', position: 'absolute', left: 0, top: 0, width: '100%', height: '100vh'}}>*/}
         
       <div data-cy='logo' className="container col-lg-6 d-flex flex-column justify-content-center text-center align-items-center" style={{paddingBottom: 'calc(100vw / 3.77)'}}> 
-        <SoundControl />
         <h1 className="display-1 fw-bold pt-2" style={{color:'#56a367', filter:'none'}}>
           <img src="/santaicon.png" style={{height: '1em', marginBottom: '.3em', marginRight: '.1em'}} alt='icon'/>
           Santa<span style={{color:'white'}}>ssign</span>
